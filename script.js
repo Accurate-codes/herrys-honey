@@ -3,19 +3,19 @@ const header = document.querySelector("header");
 window.addEventListener("scroll", function() {
     header.classList.toggle("sticky", window.scrollY > 80);
     
-    // Handle menu and scroll-to-top button visibility
+
     if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
         scrollButton.style.display = 'block';
     } else {
         scrollButton.style.display = 'none';
     }
 
-    // Close the menu on scroll
+
     menu.classList.remove('bx-x');
     navlist.classList.remove('open');
 });
 
-// Menu toggle
+
 let menu = document.querySelector('#menu-icon');
 let navlist = document.querySelector('.navlist');
 
@@ -24,7 +24,6 @@ menu.onclick = () => {
     navlist.classList.toggle('open');
 };
 
-// Scroll Reveal
 const sr = ScrollReveal({
     reset: true  
 });
@@ -44,14 +43,13 @@ revealElements.forEach(item => {
     sr.reveal(item.selector, { delay: item.delay });
 });
 
-// Scroll-to-top button functionality
+
 const scrollButton = document.querySelector('.scroll');
 
 scrollButton.addEventListener('click', function() {
     window.scrollTo({ top: 0, behavior: 'smooth' });
 });
 
-// Type effect for dynamic text
 const dynamicText = document.querySelector("h1 span");
 const words = ["NATURAL", "EARTH'S", "THE FUTURE", "NATURE'S"];
 let wordIndex = 0;
@@ -80,43 +78,42 @@ const typeEffect = () => {
 
 typeEffect();
 
-// Newsletter subscription
+
 function subscribeNewsletter() {
     var email = document.getElementById("newsletter").value;
     if (email) {
         alert("Thank you for subscribing, " + email + "!");
-        document.getElementById("newsletter").value = ''; // Clear input after subscription
+        document.getElementById("newsletter").value = '';
     } else {
         alert("Please enter a valid email address.");
     }
 }
 
-// Get the theme toggle icon and body element
+
 const themeToggleIcon = document.getElementById('theme-toggle-icon');
 const body = document.body;
 
-// Check for saved theme in localStorage
 if (localStorage.getItem('theme') === 'dark') {
     body.setAttribute('data-theme', 'dark');
     themeToggleIcon.classList.remove('bx-moon');
-    themeToggleIcon.classList.add('bx-sun'); // Change to sun icon
+    themeToggleIcon.classList.add('bx-sun');
 }
 
-// Add event listener for the icon click
+
 themeToggleIcon.addEventListener('click', () => {
-    // Check if the body currently has the dark theme
+   
     if (body.hasAttribute('data-theme')) {
-        // Switch to light theme
+     
         body.removeAttribute('data-theme');
         themeToggleIcon.classList.remove('bx-sun');
-        themeToggleIcon.classList.add('bx-moon'); // Change back to moon icon
-        localStorage.setItem('theme', 'light'); // Save light theme preference
+        themeToggleIcon.classList.add('bx-moon');
+        localStorage.setItem('theme', 'light');
     } else {
-        // Switch to dark theme
+        
         body.setAttribute('data-theme', 'dark');
         themeToggleIcon.classList.remove('bx-moon');
-        themeToggleIcon.classList.add('bx-sun'); // Change to sun icon
-        localStorage.setItem('theme', 'dark'); // Save dark theme preference
+        themeToggleIcon.classList.add('bx-sun'); 
+        localStorage.setItem('theme', 'dark'); 
     }
 });
 

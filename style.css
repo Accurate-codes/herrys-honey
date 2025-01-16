@@ -231,6 +231,7 @@ header.sticky {
     font-size: 21px;
     font-weight: bold;
     margin: 16px 0;
+    color: var(--text-color);
 }
 
 .container-box a {
@@ -837,6 +838,14 @@ header .logo {
 
 [data-theme="dark"] .theme-toggle i {
     color: var(--main-color); 
+}
+
+[data-theme="dark"] .about-text p {
+    color: var(--text-color);
+}
+
+[data-theme="dark"] .container h3 {
+    color: var(--text-color);
 }
 
 
