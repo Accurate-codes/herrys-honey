@@ -731,6 +731,12 @@ header.sticky {
         }
      }
 
+     @media (max-width: 370px) {
+        .home-text h1 {
+            font-size: 50px;
+        }
+     }
+
      @media (max-width: 340px) {
         .home-text a  {
             font-size: 19px;
